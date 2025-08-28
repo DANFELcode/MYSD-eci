@@ -3,5 +3,10 @@ SELECT COUNT(column_name)
 FROM table_name
 WHERE condition;
 
+##Como seleccionar solo los registros en una columna dada que sean distintos, (elimina duplicados)
+SELECT DISTINCT column1, column2, ...
+FROM table_name
+
+
 
 
