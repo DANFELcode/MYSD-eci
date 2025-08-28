@@ -1,0 +1,7 @@
+##Como contar numero de registros(filas) en SQL
+SELECT COUNT(column_name)
+FROM table_name
+WHERE condition;
+
+
+
