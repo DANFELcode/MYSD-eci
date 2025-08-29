@@ -1,7 +1,22 @@
+#IN
+Permite especificar multiples valores cuando usar WHERE
+SELECT name, population 
+FROM world
+WHERE name In ('France','Germany','Italy')
+
 #BETWEEN
 selecciona valores entre un rango determinado 
 SELECT * FROM Products
 WHERE Price BETWEEN 10 AND 20;
+
+#LIKE
+verifica si hay un patron de coincidencia con alguna palabra
+SELECT name
+FROM world
+WHERE name like '%United%'
+
+#XOR
+Retorna TRUE solo si una de las dos condiciones es verdadera pero no ambas
 
 
 
