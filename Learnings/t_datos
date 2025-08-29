@@ -1,0 +1,6 @@
+#VARCHAR(n):
+ define una columna para almacenar cadenas de caracteres de longitud variable con un tamaño máximo de n caracteres
+
+#DECIMAL(n,p):
+ define una columna para almacenar decimales con hasta n digitos y p digitos a la derecha
+
