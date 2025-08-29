@@ -1,0 +1,9 @@
+#BETWEEN
+selecciona valores entre un rango determinado 
+SELECT * FROM Products
+WHERE Price BETWEEN 10 AND 20;
+
+
+
+
+
