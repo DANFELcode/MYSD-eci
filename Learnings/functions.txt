@@ -13,5 +13,15 @@ SELECT name, ROUND(population/1000000,2), ROUND(gdp/1000000000,2)
 FROM world
 WHERE continent = 'South America'
 
+##Como filtrar registros cuyas dos atributos tengan igualdad en longitud de caracteres
+SELECT name, capital
+ FROM world
+ WHERE LENGTH(name) LIKE LENGTH(capital)
+
+##Como filtrar los registros cuyas dos atributos coincidan en el primer caracter y sean distintos
+SELECT name, capital
+FROM world
+WHERE LEFT(name, 1) = LEFT(capital, 1) AND name <> capital
+
 
 
