@@ -1,4 +1,4 @@
-##Como contar numero de registros(filas) en SQL
+##Como contar numero de registros(filas)
 SELECT COUNT(column_name)
 FROM table_name
 WHERE condition;
@@ -23,5 +23,31 @@ SELECT name, capital
 FROM world
 WHERE LEFT(name, 1) = LEFT(capital, 1) AND name <> capital
 
+##Como filtrar registros que tengan un atributo mayor a un registro especifico
+SELECT name FROM world
+  WHERE population >
+     (SELECT population FROM world
+      WHERE name='Russia')
 
+##FILTRAR todos los registros mostrando un atributo en terminos de porcentaje con respecto a un atributo de un registro especifico
+SELECT name, CONCAT(ROUND((population*100)/(SELECT population FROM world WHERE name = "Germany"),0),"%")
+FROM world
+WHERE continent = "Europe"
 
+##SUBQUERYS correlacionadas (Como filtrar el registro alfabeticamnete mas pequeño por cada grupo segun atributo, en este caso filtrar el primer pais(alfabeticamente) de cada continente)
+SELECT continent, name
+FROM world w1
+WHERE name = (SELECT MIN(name) FROM world w2 WHERE w2.continent = w1.continent)
+
+##Como sumar la poblacion de 3 paises
+SELECT SUM(population)
+FROM world
+WHERE name in ("Estonia","Latvia","Lithuania")
+
+##Como filtrar grupos
+The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.
+SELECT continent, SUM(population)
+  FROM world
+ GROUP BY continent
+HAVING SUM(population)>500000000
+ORDER BY SUM(population) DESC
