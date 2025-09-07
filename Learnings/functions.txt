@@ -64,5 +64,8 @@ FROM table1
 ON table1.column_name = table2.column_name;
 
 The UNION operator is used to combine the result-set of two or more SELECT statements.
+SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;
 
 
