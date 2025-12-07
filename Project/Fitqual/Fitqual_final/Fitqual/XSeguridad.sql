@@ -1,0 +1,19 @@
+--XSeguridad--
+--Eliminación de paquetes de actores
+DROP PACKAGE PA_GERENTE;
+DROP PACKAGE PA_USUARIO;
+DROP PACKAGE PA_ADMINISTRADOR_APP;
+DROP PACKAGE PA_ESPECIALISTA_FITNESS;
+
+--Eliminación de roles y permisos
+DROP ROLE GerenteFitness;
+DROP ROLE UsuarioApp;
+DROP ROLE AdministradorAppFitness;
+DROP ROLE EspecialistaFitness;
+
+REVOKE EXECUTE ON PA_GERENTE FROM GerenteFitness;
+REVOKE EXECUTE ON PA_USUARIO FROM UsuarioApp;
+REVOKE EXECUTE ON PA_ADMINISTRADOR_APP FROM AdministradorAppFitness;
+REVOKE EXECUTE ON PA_ESPECIALISTA_FITNESS FROM EspecialistaFitness;
+
+COMMIT;
